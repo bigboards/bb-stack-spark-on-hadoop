@@ -1,6 +1,6 @@
 slug: "bb-stack-spark-on-hadoop"
 name: "Apache Spark on Apache Hadoop"
-description: "Apache Spark™ is a fast and general engine for large-scale data processing, which is here deployed on Apache Hadoop for distributed storage and resource management."
+description: "EXPERIMENTAL - things might break!!! Apache Spark™ is a fast and general engine for large-scale data processing, which is here deployed on Apache Hadoop for distributed storage and resource management."
 type: stack
 owner:
   username: bigboards
