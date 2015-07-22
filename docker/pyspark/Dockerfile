@@ -12,4 +12,6 @@ USER root
 
 EXPOSE 80
 
+WORKDIR /data
+
 CMD ["/bin/bash"]
