@@ -20,7 +20,7 @@
   "containers": [
     {
       "name": "namenode",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/hdfs-namenode-wrapper.sh",
       "ports": [
         8020,
@@ -35,7 +35,7 @@
     },
     {
       "name": "datanode",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop datanode",
       "ports": [
         1004,
@@ -51,7 +51,7 @@
     },
     {
       "name": "resourcemanager",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/yarn --config /opt/hadoop/etc/hadoop resourcemanager",
       "ports": [
         8030,
@@ -67,7 +67,7 @@
     },
     {
       "name": "nodemanager",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/yarn --config /opt/hadoop/etc/hadoop nodemanager",
       "ports": [
         8040,
@@ -81,7 +81,7 @@
     },
     {
       "name": "proxyserver",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/yarn --config /opt/hadoop/etc/hadoop proxyserver",
       "ports": [
         8080
@@ -93,7 +93,7 @@
     },
     {
       "name": "historyserver",
-      "image": "bigboards/hadoop-armv7l",
+      "image": "bigboards/hadoop",
       "command": "/opt/hadoop/bin/yarn --config /opt/hadoop/etc/hadoop historyserver",
       "ports": [
         10020,
@@ -106,7 +106,7 @@
     },
     {
       "name": "spark_master",
-      "image": "bigboards/spark-armv7l",
+      "image": "bigboards/spark",
       "command": "/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --port 7077 --webui-port 8070 -h {{ hex.name }}-n1.hex",
       "ports": [
         7077,
@@ -119,7 +119,7 @@
     },
     {
       "name": "spark_worker",
-      "image": "bigboards/spark-armv7l",
+      "image": "bigboards/spark",
       "command": "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://{{ hex.name }}-n1.hex:7077 -d /data",
       "ports": [
         7078,
