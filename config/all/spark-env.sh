@@ -51,3 +51,4 @@
 
 SPARK_LOCAL_IP="{{ansible_hostname}}.hex"
 SPARK_MASTER_IP="{{hex.name}}-n1.hex"
+HADOOP_CONF_DIR="/opt/spark/conf"
