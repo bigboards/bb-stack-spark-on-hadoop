@@ -1,4 +1,5 @@
 {
+  "id": "[stack]bigboards$bb-stack-spark-on-hadoop",
   "views": [
     {
       "label": "Yarn",
@@ -125,7 +126,7 @@
         8070
       ],
       "config": {
-        "host_path": "all",
+        "host_path": "spark_master",
         "container_path": "/opt/spark/conf"
       }
     },
@@ -138,7 +139,7 @@
         8081
       ],
       "config": {
-        "host_path": "all",
+        "host_path": "spark_worker",
         "container_path": "/opt/spark/conf"
       }
     }

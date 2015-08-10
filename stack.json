@@ -27,9 +27,11 @@
       "name": "jupyterhub",
       "image": "bigboards/pyspark",
       "command": "jupyterhub -f /srv/jupyterhub/jupyterhub_config.py",
-      "ports": [
-        8000
-      ]
+      "ports": [ 8000 ],
+      "config": {
+        "host_path": "jupyterhub",
+        "container_path": "/tmp/jupyterhub"
+      }
     },
     {
       "name": "namenode",
@@ -166,9 +168,12 @@
     {
       "name": "spark_master",
       "runs_on": "n1",
-      "containers": [
-        "spark_master"
-      ]
+      "containers": ["spark_master"]
+    },
+    {
+      "name": "frontends",
+      "runs_on": "n1",
+      "containers": ["jupyterhub"]
     }
   ]
 }
