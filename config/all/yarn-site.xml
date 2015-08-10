@@ -121,9 +121,9 @@
     <value>/user</value>
   </property>
   
-  <property>
-    <name>yarn.web-proxy.address</name>
-    <value>{{ hex.name }}-n1.local</value>
-  </property>
+  <!--<property>-->
+    <!--<name>yarn.web-proxy.address</name>-->
+    <!--<value>{{ hex.name }}-n1.local</value>-->
+  <!--</property>-->
 
 </configuration>
