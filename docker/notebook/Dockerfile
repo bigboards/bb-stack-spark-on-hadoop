@@ -51,8 +51,6 @@ WORKDIR /srv/ipykernel
 RUN pip2 install --pre -e .
 RUN pip3 install --pre -e .
 
-RUN pip2 install nose
-
 ADD . /srv/notebook
 WORKDIR /srv/notebook/
 RUN chmod -R +rX /srv/notebook
@@ -64,5 +62,3 @@ RUN python2 -m ipykernel.kernelspec
 RUN python3 -m ipykernel.kernelspec
 
 WORKDIR /tmp/
-
-RUN nosetests notebook
