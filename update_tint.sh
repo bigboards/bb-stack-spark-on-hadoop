@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-curl -v -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer bigboards" -d @tint.json http://localhost:3010/api/v1/library/stack/bigboards/bb-stack-spark-on-hadoop
-curl -v -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer bigboards" -d @stack.json http://localhost:3010/api/v1/library/stack/bigboards/bb-stack-spark-on-hadoop
+curl -v -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer bigboards" -d @tint.json http://hive.bigboards.io/api/v1/library/stack/bigboards/bb-stack-spark-on-hadoop
+curl -v -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer bigboards" -d @stack.json http://hive.bigboards.io/api/v1/library/stack/bigboards/bb-stack-spark-on-hadoop
