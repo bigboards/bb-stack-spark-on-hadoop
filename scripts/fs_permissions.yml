@@ -1,0 +1,5 @@
+- file:
+    path: "{{ data_path }}"
+    owner: "bb"
+    group: "bigboards"
+    recurse: yes
