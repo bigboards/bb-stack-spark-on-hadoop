@@ -38,5 +38,5 @@ c.Authenticator.admin_users = {'bb'}
 # with ~/assignments/Welcome.ipynb as the default landing page
 # this config could also be put in
 # /etc/ipython/ipython_notebook_config.py
-c.Spawner.notebook_dir = '~/assignments'
+c.Spawner.notebook_dir = '/data'
 c.Spawner.args = ['--NotebookApp.default_url=/notebooks/Welcome.ipynb']

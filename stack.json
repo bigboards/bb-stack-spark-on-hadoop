@@ -152,7 +152,7 @@
   "groups": [
     {
       "name": "hadoop_masters",
-      "runs_on": "n1",
+      "runs_on": "host-coordinators",
       "containers": [
         "namenode",
         "resourcemanager",
@@ -162,7 +162,7 @@
     },
     {
       "name": "hadoop_slaves",
-      "runs_on": "all:!n1",
+      "runs_on": "host-workers",
       "containers": [
         "datanode",
         "nodemanager"
@@ -170,12 +170,12 @@
     },
     {
       "name": "spark_master",
-      "runs_on": "n1",
+      "runs_on": "host-coordinators",
       "containers": ["spark_master"]
     },
     {
       "name": "frontends",
-      "runs_on": "n1",
+      "runs_on": "host-coordinators",
       "containers": ["jupyterhub"]
     }
   ]
