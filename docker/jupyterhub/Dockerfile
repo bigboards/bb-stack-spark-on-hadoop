@@ -24,6 +24,8 @@ WORKDIR /srv/jupyterhub/
 
 RUN pip3 install .
 
+RUN chown -R bb /srv/jupyterhub
+
 WORKDIR /srv/jupyterhub/
 
 # Derivative containers should add jupyterhub config,
