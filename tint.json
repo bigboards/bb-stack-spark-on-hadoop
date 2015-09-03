@@ -9,5 +9,5 @@
   "type": "stack",
   "architecture": "armv7l",
   "supported_firmwares": ["feniks", "ember", "feniks-wip"],
-  "uri": "https://bitbucket.org/bigboards/bb-stack-spark-on-hadoop",
+  "uri": "https://bitbucket.org/bigboards/bb-stack-spark-on-hadoop"
 }
