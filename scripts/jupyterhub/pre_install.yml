@@ -1,0 +1,15 @@
+- file:
+    state: "directory"
+    path: "{{ data_path }}/jupyterhub"
+    owner: "bb"
+    mode: 0755
+    recurse: yes
+
+- file:
+    state: "directory"
+    path: "{{ item }}"
+    owner: "bb"
+    mode: 0755
+  with_items:
+    - "{{ tmp_path }}/spark"
+    - "{{ tmp_path }}/spark/local"
