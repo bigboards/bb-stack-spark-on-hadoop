@@ -4,3 +4,10 @@
   with_items:
     - "{{ data_path }}/dfs"
     - "{{ data_path }}/dfs/nn"
+
+- file:
+    state: "directory"
+    path: "{{ item }}"
+  with_items:
+    - "{{ tmp_path }}/spark"
+    - "{{ tmp_path }}/spark/local"
