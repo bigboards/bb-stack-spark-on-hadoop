@@ -23,6 +23,7 @@ ADD . /srv/jupyterhub
 WORKDIR /srv/jupyterhub/
 
 RUN pip3 install .
+RUN pip3 install jupyter-console
 
 RUN chown -R bb /srv/jupyterhub
 
