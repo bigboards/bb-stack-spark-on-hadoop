@@ -12,11 +12,6 @@
       "description": "The Web Console for the HDFS NameNode. It gives you more details about the data stored on the cluster"
     },
     {
-      "label": "WebUI",
-      "url": "http://{{ nodes[hex.name + '-n1'].ip }}:8070/",
-      "description": "The Spark Web UI"
-    },
-    {
       "label": "Jupyter Hub",
       "url": "http://{{ nodes[hex.name + '-n1'].ip }}:8000/",
       "description": "The Notebook hub"
