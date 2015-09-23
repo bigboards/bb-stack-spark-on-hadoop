@@ -7,7 +7,7 @@
   "owner": "bigboards",
   "logo": "https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2015/Feb/18/3592780503-2-bb-stack-spark-logo_avatar.png",
   "type": "stack",
-  "architecture": "armv7l",
+  "architecture": "all",
   "supported_firmwares": ["feniks", "ember", "feniks-wip"],
   "uri": "https://bitbucket.org/bigboards/bb-stack-spark-on-hadoop"
 }
