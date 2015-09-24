@@ -26,28 +26,30 @@
     <!-- These property values were generated with hdp-configuration-utils.py -->
     <!-- armv7l => Using cores=4 memory=2GB disks=1 hbase=False               -->
     <!-- x86_64 => Using cores=4 memory=16GB disks=1 hbase=False              -->
+    <!--                                                                      -->
+    <!-- This node's architecture is '{{ ansible_architecture }}'             -->
 
     <property>
         <name>mapreduce.map.java.opts</name>
-        <value>{% (ansible_architecture == 'armv7l') | ternary('-Xmx512m','-Xmx3072m') %}</value>
+        <value>{{ (ansible_architecture == 'armv7l') | ternary('-Xmx512m','-Xmx3072m') }}</value>
     </property>
     <property>
         <name>mapreduce.reduce.java.opts</name>
-        <value>{% (ansible_architecture == 'armv7l') | ternary('-Xmx1024m','-Xmx3072m') %}</value>
+        <value>{{ (ansible_architecture == 'armv7l') | ternary('-Xmx1024m','-Xmx3072m') }}</value>
     </property>
 
     <property>
         <name>mapreduce.map.memory.mb</name>
-        <value>{% (ansible_architecture == 'armv7l') | ternary('640','4096') %}</value>
+        <value>{{ (ansible_architecture == 'armv7l') | ternary('640','4096') }}</value>
     </property>
     <property>
         <name>mapreduce.reduce.memory.mb</name>
-        <value>{% (ansible_architecture == 'armv7l') | ternary('1280','4096') %}</value>
+        <value>{{ (ansible_architecture == 'armv7l') | ternary('1280','4096') }}</value>
     </property>
 
     <property>
         <name>mapreduce.task.io.sort.mb</name>
-        <value>{% (ansible_architecture == 'armv7l') | ternary('256','1536') %}</value>
+        <value>{{ (ansible_architecture == 'armv7l') | ternary('256','1536') }}</value>
     </property>
 
 
