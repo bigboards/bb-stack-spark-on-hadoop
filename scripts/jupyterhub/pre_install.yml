@@ -8,8 +8,7 @@
 - file:
     state: "directory"
     path: "{{ item }}"
-    owner: 1000
     mode: 0777
   with_items:
-    - "{{ tmp_path }}/spark"
-    - "{{ tmp_path }}/spark/local"
+    - "{{ tmp_path }}/jupyterhub/spark"
+    - "{{ tmp_path }}/jupyterhub/spark/local"
