@@ -1,0 +1,13 @@
+- shell: hdfs dfs -mkdir -p {{item}}
+  args:
+    executable: "/bin/bash"
+  with_items:
+    - "/user/root"
+    - "/user/bb"
+
+- shell: hdfs dfs -chown {{item.owner}}:{{item.group}} {{item.path}}
+  args:
+    executable: "/bin/bash"
+  with_items:
+    - "{'path': '/user/root', 'owner': 'root', 'group': 'supergroup'} "
+    - "{'path': '/user/bb', 'owner': 'bb', 'group': 'bigboards'} "
