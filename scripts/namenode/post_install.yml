@@ -1,11 +1,14 @@
-- pause: seconds=10 prompt="Wait for namenode to start"
+- name: "Wait for namenode to start"
+  pause: seconds=10 
 
 
-- shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfsadmin -safemode wait"
+- name: "Wait for namenode to exit safemode"
+  shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfsadmin -safemode wait"
   args:
     executable: "/bin/bash"
 
-- shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -mkdir -p {{item}}"
+- name: "Create tmp and user folders"
+  shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -mkdir -p {{item}}"
   args:
     executable: "/bin/bash"
   with_items:
@@ -13,7 +16,8 @@
     - "/user/root"
     - "/user/bb"
 
-- shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chown -R {{item.owner}}:{{item.group}} {{item.path}}"
+- name: "set group and owner of tmp and user folders"
+  shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chown -R {{item.owner}}:{{item.group}} {{item.path}}"
   args:
     executable: "/bin/bash"
   with_items:
@@ -21,7 +25,8 @@
     - "{path: '/user', owner: 'root', group: 'supergroup'} "
     - "{path: '/user/bb', owner: 'bb', group: 'bigboards'} "
 
-- shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chmod -R 777 {{item}}"
+- name: "set permissions for tmp and user folders"
+  shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chmod -R 777 {{item}}"
   args:
     executable: "/bin/bash"
   with_items:
