@@ -21,9 +21,9 @@
   args:
     executable: "/bin/bash"
   with_items:
-    - "{path: '/tmp', owner: 'root', group: 'supergroup'} "
-    - "{path: '/user', owner: 'root', group: 'supergroup'} "
-    - "{path: '/user/bb', owner: 'bb', group: 'bigboards'} "
+    - {path: "/tmp", owner: "root", group: "supergroup"}
+    - {path: "/user", owner: "root", group: "supergroup"}
+    - {path: "/user/bb", owner: "bb", group: "bigboards"}
 
 - name: "set permissions for tmp and user folders"
   shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chmod -R 777 {{item}}"
