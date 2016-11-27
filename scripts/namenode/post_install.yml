@@ -1,3 +1,7 @@
+- shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfsadmin -safemode wait"
+  args:
+    executable: "/bin/bash"
+
 - shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -mkdir -p {{item}}"
   args:
     executable: "/bin/bash"
