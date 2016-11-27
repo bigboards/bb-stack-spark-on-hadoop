@@ -1,4 +1,4 @@
-- shell: docker exec namenode hdfs dfs -mkdir -p {{item}}
+- shell: docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -mkdir -p {{item}}
   args:
     executable: "/bin/bash"
   with_items:
@@ -6,7 +6,7 @@
     - "/user/root"
     - "/user/bb"
 
-- shell: docker exec namenode hdfs dfs -chown -R {{item.owner}}:{{item.group}} {{item.path}}
+- shell: docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chown -R {{item.owner}}:{{item.group}} {{item.path}}
   args:
     executable: "/bin/bash"
   with_items:
@@ -14,7 +14,7 @@
     - "{'path': '/user', 'owner': 'root', 'group': 'supergroup'} "
     - "{'path': '/user/bb', 'owner': 'bb', 'group': 'bigboards'} "
 
-- shell: docker exec namenode hdfs dfs -chmod -R 777 {{item}}
+- shell: docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfs -chmod -R 777 {{item}}
   args:
     executable: "/bin/bash"
   with_items:
