@@ -1,3 +1,6 @@
+- pause: seconds=10 prompt="Wait for namenode to start"
+
+
 - shell: "docker exec namenode /opt/hadoop/bin/hdfs --config /opt/hadoop/etc/hadoop dfsadmin -safemode wait"
   args:
     executable: "/bin/bash"
