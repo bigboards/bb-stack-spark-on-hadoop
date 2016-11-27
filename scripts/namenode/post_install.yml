@@ -1,13 +1,21 @@
-- shell: hdfs dfs -mkdir -p {{item}}
+- shell: docker exec namenode hdfs dfs -mkdir -p {{item}}
   args:
     executable: "/bin/bash"
   with_items:
+    - "/tmp"
     - "/user/root"
     - "/user/bb"
 
-- shell: hdfs dfs -chown {{item.owner}}:{{item.group}} {{item.path}}
+- shell: docker exec namenode hdfs dfs -chown -R {{item.owner}}:{{item.group}} {{item.path}}
   args:
     executable: "/bin/bash"
   with_items:
-    - "{'path': '/user/root', 'owner': 'root', 'group': 'supergroup'} "
+    - "{'path': '/tmp', 'owner': 'root', 'group': 'supergroup'} "
+    - "{'path': '/user', 'owner': 'root', 'group': 'supergroup'} "
     - "{'path': '/user/bb', 'owner': 'bb', 'group': 'bigboards'} "
+
+- shell: docker exec namenode hdfs dfs -chmod -R 777 {{item}}
+  args:
+    executable: "/bin/bash"
+  with_items:
+    - "/tmp"
